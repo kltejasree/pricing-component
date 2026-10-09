@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+      
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      background-image: url('./images/bg-top.svg'), url('./images/bg-bottom.svg');
+      background-repeat: no-repeat, no-repeat;
+      background-position: top right, bottom left;
+      background-color: hsl(236, 37%, 92%);
+      width: 100%;
+      min-width: 365px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      
+
+    }
+
+    .container .main {
+      display: flex;
+      justify-content: center;
+
+
+    }
+
+    .heading {
+      text-align: center;
+      font-size: large;
+      font-weight: bold;
+      font-family: Montserrat;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .pricing {
+      display: flex;
+      gap: 10px;
+      font-size: small;
+      font-weight: lighter;
+      margin-top: 10px;
+    }
+
+    .toggle {
+      width: 40px;
+      height: 22px;
+      background-color: hsl(237, 63%, 64%);
+      border-radius: 20px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    #pricing-toggle {
+      display: none;
+    }
+
+    .circle {
+      width: 18px;
+      height: 18px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+    }
+
+    #pricing-toggle:checked+.main .toggle .circle {
+      left: 20px;
+    }
+
+    .monthly {
+      display: none;
+    }
+
+
+    #pricing-toggle:checked~.annualprice .annual {
+      display: none;
+    }
+
+    #pricing-toggle:checked~.annualprice .monthly {
+      display: inline;
+    }
+
+    .container .annualprice {
+     
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     
+    }
+
+    .type {
+      width: 300px;
+      min-height: 400px;
+      box-sizing: border-box;
+      background-color: hsl(240, 78%, 98%);
+      border-radius: 10px;
+      text-align: center;
+      font-size: large;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #878383;
+
+    }
+
+    .horizontal-line {
+
+      border-top: 2px solid #c6baba;
+      margin: 20px;
+    }
+
+    .basic {
+      padding-top: 10px;
+
+    }
+
+    .price {
+      font-weight: bolder;
+      font-size: 40px;
+      margin-top: 10px;
+      color: #6d6c6c;
+    }
+
+    .storage {
+      font-size: medium;
+      font-weight: lighter;
+      color: #878383;
+
+    }
+
+    .button button {
+      width: 90%;
+      font-size: 16px;
+      background-color: hsl(237, 63%, 64%);
+      margin: 10px 10px;
+      padding: 10px 10px;
+      border-radius: 5px;
+      color: white;
+
+    }
+
+    .professional-card {
+      background-color: hsl(237, 63%, 64%);
+      color: white;
+
+
+    }
+
+    .professional-card .professional {
+      padding-top: 10px;
+    }
+
+    .professional-card .price {
+      color: white;
+    }
+
+    .professional-card .storage {
+      color: white;
+    }
+
+    .professional-card .button button {
+      background-color: white;
+      color: #1a1919;
+    }
+
+    .professional-card .horizontal-line {
+      border-color: rgb(188, 192, 196);
+    }
+
+    .master {
+      padding-top: 10px;
+    }
+
+    @media (min-width: 1440px){
+      
+      .container {
+        min-height: 100vh;
+        border-radius: 10px;
+        max-width: none;
+        justify-content: center;
+        
+      }
+
+      .container .annualprice {
+        
+        flex-direction: row;
+        justify-content: center;
+       
+      }
+
+      .professional-card{
+      
+        height: 450px;
+
+      }
+
+      .main {
+        font-size: xx-large;
+        padding: 25px;
+        
+        
+      }
+
+      .heading {
+        font-size: xx-large;
+        
+      }
+
+      .pricing {
+        padding: 25px;
+      }
+
+      
+    }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -9,18 +11,25 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
+      font-family: "Montserrat", sans-serif;   
+      font-size: 15px;
+      font-weight: 700;
+
+      
     }
 
     .container {
       background-image: url('./images/bg-top.svg'), url('./images/bg-bottom.svg');
       background-repeat: no-repeat, no-repeat;
       background-position: top right, bottom left;
-      background-color: hsl(236, 37%, 92%);
+      background-color: hsl(240, 78%, 98%);
       width: 100%;
       min-width: 365px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      /* padding */
+      padding: 64px 24px 60px;
       
       
 
@@ -29,52 +38,61 @@ body {
     .container .main {
       display: flex;
       justify-content: center;
+      margin-bottom: 48px;    /* space between toggle and cards*/
 
 
     }
 
     .heading {
       text-align: center;
-      font-size: large;
-      font-weight: bold;
-      font-family: Montserrat;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      font-size: 28px;  /* changed large to 28px*/
+      font-weight: 700;
+      color: hsl(233, 13%, 49%); /* change color */
+      margin: 0;
     }
 
     .pricing {
       display: flex;
-      gap: 10px;
-      font-size: small;
-      font-weight: lighter;
-      margin-top: 10px;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      font-size: 15px;
+      font-weight: 700;
+      color: hsl(234, 14%, 74%);
+      margin-top: 32px;
     }
 
     .toggle {
-      width: 40px;
-      height: 22px;
-      background-color: hsl(237, 63%, 64%);
-      border-radius: 20px;
+      display: block;
+      flex: none;
+      width: 56px;  
+      height: 31px; 
+      background-color: hsl(237, 63%, 64%);                         
+      background-image: linear-gradient(135deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%)); 
+      border-radius: 16px;
       position: relative;
       cursor: pointer;
     }
+
+      
 
     #pricing-toggle {
       display: none;
     }
 
     .circle {
-      width: 18px;
-      height: 18px;
+      width: 23px;
+      height: 23px;
       background-color: white;
       border-radius: 50%;
       position: absolute;
-      top: 2px;
-      left: 2px;
+      top: 4px;
+      left: 4px;
+      transition: left 0.2s ease;
     }
 
     #pricing-toggle:checked+.main .toggle .circle {
-      left: 20px;
+      left: 29px;
     }
 
     .monthly {
@@ -87,7 +105,7 @@ body {
     }
 
     #pricing-toggle:checked~.annualprice .monthly {
-      display: inline;
+      display: inline-block;
     }
 
     .container .annualprice {
@@ -99,64 +117,118 @@ body {
     }
 
     .type {
-      width: 300px;
-      min-height: 400px;
-      box-sizing: border-box;
-      background-color: hsl(240, 78%, 98%);
+      width: 100%;                           
+      max-width: 327px;                       
+      background-color: #fff;                  
       border-radius: 10px;
       text-align: center;
-      font-size: large;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #878383;
-
+      font-size: 18px;                         /* CHANGED: plan name size */
+      font-weight: 700;
+      color: hsl(233, 13%, 49%);              
+      margin-bottom: 24px;                     
+      padding-bottom: 32px;                   
+      box-shadow: 0 30px 50px rgba(110, 110, 200, 0.12);   
     }
 
-    .horizontal-line {
 
-      border-top: 2px solid #c6baba;
-      margin: 20px;
+    .basic, .professional, .master {
+      padding-top: 33px;
+      line-height: 22px;
     }
 
-    .basic {
-      padding-top: 10px;
 
-    }
 
     .price {
-      font-weight: bolder;
-      font-size: 40px;
-      margin-top: 10px;
-      color: #6d6c6c;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1;
+      margin-top: 27px;
+      color: hsl(232, 13%, 33%);
+
     }
 
-    .storage {
-      font-size: medium;
-      font-weight: lighter;
-      color: #878383;
+    .montly {
+      display: none;
+    }
 
+    .annual {
+      display: inline-block;
+    }
+
+    .annual,
+    .monthly {                   
+      font-size: 70px;                         
+      font-weight: 800;                     
+      letter-spacing: -5px;                   
+      line-height: 1;                          
+      padding-bottom: 16px;                    
+    }
+ 
+    /* makes the "$" smaller than the number */
+    .annual::first-letter,
+    .monthly::first-letter {
+      font-size: 36px;
+      margin-right: 6px;
+      vertical-align: 10px;
+      
+
+      
+    }
+    
+
+    .horizontal-line {
+      border-top: 1px solid hsla(234, 14%, 74%, 0.4);  
+      margin: 17px 31px;                                
+    }
+
+
+    .storage {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 18px;
+      color: hsl(233, 13%, 49%);
+
+    }
+
+    .button {
+      padding: 0 31px;
+      margin-top: 31px;
     }
 
     .button button {
-      width: 90%;
-      font-size: 16px;
-      background-color: hsl(237, 63%, 64%);
-      margin: 10px 10px;
-      padding: 10px 10px;
-      border-radius: 5px;
+      width: 100%;
+      height: 44px;
+      margin: 0;
+      padding: 0;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
       color: white;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
 
     }
 
+    .button button:hover {
+      background: white;
+      border-color: hsl(237, 63%, 64%);
+      color: hsl(237, 63%, 64%);
+    }
+
     .professional-card {
-      background-color: hsl(237, 63%, 64%);
+      background: linear-gradient(135deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
       color: white;
+      box-shadow: 0 30px 50px rgba(110, 110, 200, 0.3);
 
 
     }
 
     .professional-card .professional {
-      padding-top: 10px;
+      padding-top: 33px;
     }
 
     .professional-card .price {
@@ -168,25 +240,30 @@ body {
     }
 
     .professional-card .button button {
-      background-color: white;
-      color: #1a1919;
+      background: white;
+      color: hsl(237, 63%, 64%);
     }
+
+    .professional-card .button button:hover {  /* NEW */
+      background: transparent;
+      border-color: white;
+      color: white;
+    }
+
 
     .professional-card .horizontal-line {
-      border-color: rgb(188, 192, 196);
+      border-color: rgb(255, 255, 255, 0.2);
     }
 
-    .master {
-      padding-top: 10px;
-    }
+   
 
-    @media (min-width: 1440px){
+    @media (min-width: 768px){
       
       .container {
         min-height: 100vh;
         border-radius: 10px;
         max-width: none;
-        justify-content: center;
+        padding-top: 74px;
         
       }
 
@@ -197,27 +274,46 @@ body {
        
       }
 
-      .professional-card{
-      
-        height: 450px;
-
+      .container .main {
+        margin-bottom: 65px;
       }
 
       .main {
         font-size: xx-large;
-        padding: 25px;
+        padding: 0;
         
         
       }
 
       .heading {
-        font-size: xx-large;
+        font-size: 32px;
         
       }
 
       .pricing {
-        padding: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
       }
 
-      
+      .type {
+        width: 350px;                          
+        max-width: none;
+        height: auto; 
+        min-height: 0;                        
+        margin-bottom: 0;                      /* CHANGED: removes the gap between cards */
+        padding-bottom: 31px;
+      }
+ 
+      .professional-card {
+        padding-bottom: 54px;                        
+      }
+ 
+      .professional-card .professional {
+        padding-top: 56px;  
+
+          
+      }
     }
